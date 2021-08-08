@@ -1,0 +1,117 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: "Hahmlet", serif;
+}
+
+body {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQEsJxd3WipWv3GneQP88PFyHpIvNINld7EA&usqp=CAU);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.reloj {
+  width: 400px;
+  height: 400px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border: 2px solid black;
+  position: relative;
+}
+
+.reloj .numeros {
+  --rotacion: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform: rotate(var(--rotacion));
+  font-size: 1.5rem;
+}
+
+.reloj .nro1 {
+  --rotacion: 30deg;
+}
+.reloj .nro2 {
+  --rotacion: 60deg;
+}
+.reloj .nro3 {
+  --rotacion: 90deg;
+}
+.reloj .nro4 {
+  --rotacion: 120deg;
+}
+.reloj .nro5 {
+  --rotacion: 150deg;
+}
+.reloj .nro6 {
+  --rotacion: 180deg;
+}
+.reloj .nro7 {
+  --rotacion: 210deg;
+}
+.reloj .nro8 {
+  --rotacion: 240deg;
+}
+.reloj .nro9 {
+  --rotacion: 270deg;
+}
+.reloj .nro10 {
+  --rotacion: 300deg;
+}
+.reloj .nro11 {
+  --rotacion: 330deg;
+}
+.reloj .nro12 {
+  --rotacion: 360deg;
+}
+
+.reloj .aguja {
+  --rotacion: 0;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  background-color: black;
+  border: 1px solid white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  z-index: 10;
+  transform-origin: bottom;
+  transform: translateX(-50%) rotate(calc(var(--rotacion) * 1deg));
+}
+
+.reloj::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  z-index: 11;
+  width: 15px;
+  height: 15px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.reloj .aguja.segundos {
+  width: 3px;
+  height: 45%;
+  background-color: red;
+}
+
+.reloj .aguja.minutos {
+  width: 7px;
+  height: 40%;
+  background-color: black;
+}
+
+.reloj .aguja.hora {
+  width: 10px;
+  height: 35%;
+  background-color: black;
+}
